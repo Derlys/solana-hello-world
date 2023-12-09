@@ -18,6 +18,13 @@ pub struct CreateMessage<'info> {
     pub author: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
+#[derive(Accounts)]
+pub struct UpdateMessage<'info> {
+		#[account(mut)]
+    pub message: Account<'info, Message>,
+		#[account(mut)]
+    pub author: Signer<'info>,
+}
 
 #[account]
 pub struct Message {
